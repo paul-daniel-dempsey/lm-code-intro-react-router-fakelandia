@@ -1,23 +1,34 @@
-.App {
-  text-align: center;
+html, body {
+  width: 100%;
+  height: 100%;
 }
 
-.main {
+article {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+main {
+  flex-grow: 1;
   background: #b5b89d;  
 }
 
-.header {
-  display: flex;
+header, main, footer {
+  flex-shrink: 0;
+}
+
+header {
+  /* display: flex;
   flex-flow: row wrap;
-  padding: 1rem 5rem;
+  padding: 1rem 5rem; */
   background: #665b87;
 }
 
-
-
-.footer {
-  display: flex;
+footer {
+  /* display: flex;
   flex-flow: row wrap;
-  padding: 1rem 5rem;
+  padding: 1rem 5rem; */
   background: #95eebb;
 }

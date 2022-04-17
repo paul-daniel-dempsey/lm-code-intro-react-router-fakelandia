@@ -1,5 +1,7 @@
+import trlogo from '../pics/trlogo.png';
+
 const Footer : React.FC = () => <footer className="footer has-background-primary">
-<h2>Footer</h2>
+    <img src={trlogo} alt="logo techreturners" width="25" height="25"/>© 2021 Tech Returners
 </footer>
 
 export default Footer;
