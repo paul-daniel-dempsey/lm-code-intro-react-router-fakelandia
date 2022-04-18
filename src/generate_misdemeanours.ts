@@ -1,3 +1,5 @@
+import { mdProps } from "./components/misdemeaner/misdemeaner";
+
 export const MISDEMEANOURS = [
 	'rudeness',
 	'vegetables',
@@ -6,14 +8,15 @@ export const MISDEMEANOURS = [
 ] as const;
 export type Misdemeanour = typeof MISDEMEANOURS[number];
 
-export default async function generateMisdemeanours(
+ 
+ export default async function generateMisdemeanours(
 	number: number
-): Promise<Array<Misdemeanour>> {
+ ): Promise<Array<mdProps>> {
 	// pretend this is an API we're calling, wait 1.5s
 	await sleep(1500);
 
 	let amount = number ?? 50;
-
+	console.log("amount"+ amount);
 	const misdemeanours = [];
 
 	for (let i = 0; i < amount; i++) {
@@ -23,7 +26,7 @@ export default async function generateMisdemeanours(
 			date: new Date().toLocaleDateString(),
 		});
 	}
-
+	console.log("length"+ misdemeanours.length);
 	return misdemeanours;
 }
 
