@@ -1,36 +1,17 @@
-import React from "react";
-import { useEffect, useState } from "react";
-import generateMisdemeanours from "../../generate_misdemeanours";
+import React, { useContext, useState } from "react";
+import { MDsContext } from "../mainlayout/mainlayout";
 import Misdemeaner, { mdProps } from "./misdemeaner";
 import MisdemeanerFilter from "./misdemeanerfilter";
- 
-// Create Context
-export const MDsContext = React.createContext<Array<mdProps>>([]);
- 
-// Create Context setCharacterFavourites =>
-//  React.Dispatch (so can use value in Provider call) 
-//  React.SetStateAction (so can link setCharacterFavourites call to be change with array of numbers + initialised to null)
-export const UpdateMDsContext = React.createContext<null | React.Dispatch<React.SetStateAction<Array<mdProps>>>>(null);
 
 const Misdemeaners : React.FC = () => {
-    
-    const [MDs, setMDs] = useState<Array<mdProps>>([]);
+   
+    // Consume
+    const MDs = useContext(MDsContext);
+
     const [currMDfilter, setCurrMDfilter] = useState<string>('All');
-    const [countMD, setCountMD] = useState<number>(10);
-    
-    // load number of misdemeaners  
-    useEffect(() => {
-        getMisdemanours(countMD);
-    }, [countMD])
-    
-    // generate a number of random misdemeaners
-    const getMisdemanours = async (mdNum: number) => {
-        const mdResponse = await generateMisdemeanours(mdNum);
-        setMDs(mdResponse);
-    };
 
     const buildMDs = () => {
- 
+  
         // create element array
         let elements : Array<JSX.Element> = [];
       
@@ -55,14 +36,10 @@ const Misdemeaners : React.FC = () => {
      
     // display filter and misdemeaner elements based on filter 
     return (<section className='content'>
-        <MDsContext.Provider value={MDs}>
-        <UpdateMDsContext.Provider value={setMDs}>
-            <MisdemeanerFilter selection={currMDfilter} onChangeSelection={setCurrMDfilter} />
-            <div className="character-container">
-                {buildMDs()}
-            </div>
-        </UpdateMDsContext.Provider>
-        </MDsContext.Provider>
+        <MisdemeanerFilter selection={currMDfilter} onChangeSelection={setCurrMDfilter} />
+        <div className="character-container">
+            {buildMDs()}
+        </div>
     </section>);
 };
 
