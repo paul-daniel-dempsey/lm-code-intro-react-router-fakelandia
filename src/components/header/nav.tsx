@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 const Nav : React.FC = () => {
  
 const someActiveStyleObject = {color : '#fff'};
-const someOtherStyleObject = {color : '#545e6f'};
+const someOtherStyleObject = {color : '#0000ff'};
  
 return(
 <nav className='is-flex is-flex-direction-row is-justify-content-space-evenly'>

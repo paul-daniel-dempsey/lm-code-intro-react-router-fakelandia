@@ -51,7 +51,7 @@ const Confession : React.FC = () => {
         <UpdateDisplayButtonContext.Provider value={setDisplayButton}>        
         <section className="confession">
             <p>Its very difficult to catch people comitting misdemeaners so we appreciate it when citizens confess to us directly.</p>
-            <p>Howevere, if you're just having a hard day and need to vent, then your welcome to contact us here too. Up to you!</p>
+            <p>However, if you're just having a hard day and need to vent, then your welcome to contact us here too. Up to you!</p>
             <Subject subject={subject} onChangeSubject={(e: any) => setSubject(e.target.value)}/>
             <Reason reason={reason} onChangeReason={(e: any) => setReason(e.target.value)}/>
             <Detail detail={detail} onChangeDetail={(e: any) => setDetail(e.target.value)}/>
