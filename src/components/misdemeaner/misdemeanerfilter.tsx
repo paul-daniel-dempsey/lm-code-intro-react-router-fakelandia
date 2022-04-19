@@ -14,7 +14,7 @@ const MisdemeanerFilter : React.FC<mdFilterProps> = ({selection, onChangeSelecti
         <select name="mdfilter" 
                 data-testid='mdfilter' 
                 onChange={(e) => {selectFilter(e.target.value)}}>
-            <option value="All">Filter</option>
+            <option value="" selected disabled hidden>Filter</option>
             <option value="rudeness">rudeness</option>
             <option value="vegetables">vegetables</option>
             <option value="lift">lift</option>
