@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { useState } from "react";
 import { Misdemeanour } from "../../generate_misdemeanours";
 import { MDsContext, UpdateMDsContext } from "../mainlayout/mainlayout";
-import Misdemeaner, { mdProps } from "../misdemeaner/misdemeaner";
+import { mdProps } from "../misdemeaner/misdemeaner";
 import Detail from "./detail";
 import Reason from "./reason";
 import Subject from "./subject";
@@ -49,13 +49,13 @@ const Confession : React.FC = () => {
     return (
         <displayButtonContext.Provider value={displayButton}>
         <UpdateDisplayButtonContext.Provider value={setDisplayButton}>        
-        <section className="">
+        <section className="confession">
             <p>Its very difficult to catch people comitting misdemeaners so we appreciate it when citizens confess to us directly.</p>
             <p>Howevere, if you're just having a hard day and need to vent, then your welcome to contact us here too. Up to you!</p>
             <Subject subject={subject} onChangeSubject={(e: any) => setSubject(e.target.value)}/>
             <Reason reason={reason} onChangeReason={(e: any) => setReason(e.target.value)}/>
             <Detail detail={detail} onChangeDetail={(e: any) => setDetail(e.target.value)}/>
-            <button type="submit" onClick={submitConfession} disabled={displayButton}>Confess</button>
+            <button type="submit" data-testid="confess" onClick={submitConfession} disabled={displayButton}><span>Confess</span></button>
         </section>
         </UpdateDisplayButtonContext.Provider>
         </displayButtonContext.Provider>

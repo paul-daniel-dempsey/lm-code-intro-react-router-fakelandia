@@ -11,9 +11,9 @@ const Reason : React.FC<ReasonProps> = ({reason,onChangeReason}) => {
     <div>  
         <label htmlFor='cfReason'>Reason: </label>
         <select name="cfReason" 
-                data-testid='cfReason' 
+                data-testid='reason' 
                 onChange={(e) => {onChangeReason(e);}}>
-                 <option value="talk" selected>I just want to talk</option>
+                 <option value="talk">I just want to talk</option>
                  <option value="rudeness">rudeness</option>
                  <option value="vegetables">vegetables</option>
                  <option value="lift">lift</option>
