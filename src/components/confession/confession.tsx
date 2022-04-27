@@ -52,10 +52,16 @@ const Confession : React.FC = () => {
         <section className="confession">
             <p>Its very difficult to catch people comitting misdemeaners so we appreciate it when citizens confess to us directly.</p>
             <p>However, if you're just having a hard day and need to vent, then your welcome to contact us here too. Up to you!</p>
-            <Subject subject={subject} onChangeSubject={(e: any) => setSubject(e.target.value)}/>
-            <Reason reason={reason} onChangeReason={(e: any) => setReason(e.target.value)}/>
-            <Detail detail={detail} onChangeDetail={(e: any) => setDetail(e.target.value)}/>
-            <button type="submit" data-testid="confess" onClick={submitConfession} disabled={displayButton}><span>Confess</span></button>
+            <div className="confession-flex-container">
+                <Subject subject={subject} onChangeSubject={(e: any) => setSubject(e.target.value)}/>
+                <div className="confession-flex-container-filter">
+                    <Reason reason={reason} onChangeReason={(e: any) => setReason(e.target.value)}/>
+                </div>
+                <Detail detail={detail} onChangeDetail={(e: any) => setDetail(e.target.value)}/>
+            </div>
+            <div className="confession-submit-button">
+                <button className="confession-submit-button-text" type="submit" data-testid="confess" onClick={submitConfession} disabled={displayButton}><span>Confess</span></button>
+            </div>
         </section>
         </UpdateDisplayButtonContext.Provider>
         </displayButtonContext.Provider>

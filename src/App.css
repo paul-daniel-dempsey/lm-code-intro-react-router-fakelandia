@@ -12,7 +12,7 @@ article {
 
 main {
   flex-grow: 1;
-  background: #b5b89d;  
+  background: #ffffff;  
 }
 
 header, main, footer {
@@ -23,13 +23,13 @@ header {
   /* display: flex;
   flex-flow: row wrap;
   padding: 1rem 5rem; */
-  background: #665b87;
+  background: #ffffff;
 }
 
 footer {
   /* display: flex;
   flex-flow: row wrap;
   padding: 1rem 5rem; */
-  background: #95eebb;
+  background: #ffffff;
 }
   

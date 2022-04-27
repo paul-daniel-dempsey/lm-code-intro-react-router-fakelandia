@@ -12,16 +12,16 @@ const Misdemeaner : React.FC<mdProps> = ({citizenId,misdemeanour,date}) => {
         let desc : string = '';
         switch(md){
             case 'rudeness':
-                desc ='Mild Public Rudeness = 🤪';
+                desc ='Mild Public Rudeness 🤪';
                 break;
             case 'lift':
-                desc ='Speaking in a Lift = 🗣';
+                desc ='Speaking in a Lift 🗣';
                 break;
             case 'vegetables':
-                desc ='Not Eating Your Vegetables = 🥗';
+                desc ='Not Eating Your Vegetables 🥗';
                 break;
             case 'united':
-                desc ='Supporting Manchester United = 😈';
+                desc ='Supporting Manchester United 😈';
                 break;
         }
         return desc;
@@ -47,11 +47,13 @@ const Misdemeaner : React.FC<mdProps> = ({citizenId,misdemeanour,date}) => {
     }
 
    return (
-       <article className="misdemeaner-item">
-           <li className="misdemeaner-item">{citizenId}</li>
-           <li className="misdemeaner-item">{mdDescription(misdemeanour)}</li>
-           <li className="misdemeaner-item">{date}</li>
-           <li className="misdemeaner-item"><img src={picsumurl(misdemeanour)}></img></li>
+       <article className="misdemeaner">
+           <ul className="misdemeaner">
+            <li className="misdemeaner-item">{citizenId}</li>
+            <li className="misdemeaner-item">{date}</li>
+            <li className="misdemeaner-item">{mdDescription(misdemeanour)}</li>
+            <li className="misdemeaner-item"><img src={picsumurl(misdemeanour)} width='50' height='50'></img></li>
+           </ul>
        </article>   
    )
 }

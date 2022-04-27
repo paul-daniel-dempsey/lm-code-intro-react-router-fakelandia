@@ -35,9 +35,20 @@ const Misdemeaners : React.FC = () => {
      }
      
     // display filter and misdemeaner elements based on filter 
-    return (<section className='content'>
-        <MisdemeanerFilter selection={currMDfilter} onChangeSelection={setCurrMDfilter} />
-        <div className="character-container">
+    return (
+    <section className='misdemeaners'>
+        <div className="misdemeaner-filter">
+            <MisdemeanerFilter selection={currMDfilter} onChangeSelection={setCurrMDfilter} />
+        </div>
+        <div className="misdemeaners-flex-container">
+            <article className="misdemeaner">
+            <ul className="misdemeaner-titles">
+                <li className="misdemeaner-title-item">CitizenId</li>
+                <li className="misdemeaner-title-item">Date</li>
+                <li className="misdemeaner-title-item">Misdemeanour</li>
+                <li className="misdemeaner-title-item">Punishment</li>
+            </ul>
+        </article>  
             {buildMDs()}
         </div>
     </section>);

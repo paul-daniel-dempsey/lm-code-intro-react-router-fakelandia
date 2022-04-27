@@ -9,10 +9,12 @@ const Reason : React.FC<ReasonProps> = ({reason,onChangeReason}) => {
 
     return(
     <div>  
-        <label htmlFor='cfReason'>Reason: </label>
-        <select name="cfReason" 
+        <label htmlFor='cfReason'>Reason for contact: </label>
+        <select className="confession-flex-container-filter"
+                name="cfReason" 
                 data-testid='reason' 
                 onChange={(e) => {onChangeReason(e);}}>
+                 <option value="" selected disabled hidden>Select</option>
                  <option value="talk">I just want to talk</option>
                  <option value="rudeness">rudeness</option>
                  <option value="vegetables">vegetables</option>

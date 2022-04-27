@@ -1,8 +1,9 @@
 import Nav from "./nav";
 
-const Header : React.FC = () => <header className='header has-background-primary'>
-    <h2>Header</h2>
+const Header : React.FC = () => 
+
+<header className='header'>
     <Nav/>
-    </header>
+</header>
 
 export default Header;

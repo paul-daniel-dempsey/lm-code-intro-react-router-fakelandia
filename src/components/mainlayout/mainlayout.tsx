@@ -36,7 +36,7 @@ const MainLayout : React.FC = () => {
         <UpdateMDsContext.Provider value={setMDs}>
                 <article>
                     <Header/>
-                    <main className="main has-background-primary">
+                    <main className="main">
                         <Outlet/>
                     </main>
                     <Footer/>

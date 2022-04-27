@@ -9,8 +9,8 @@ const Detail : React.FC<DetailProps> = ({detail,onChangeDetail}) => {
     
     return(
     <div>
-        <label>Detail: </label>
-        <textarea id="cfDetail" 
+        <textarea className="confession-textarea" 
+                    id="cfDetail" 
                     data-testid='detail' 
                     value={detail} 
                     onChange={(e) => {onChangeDetail(e);
