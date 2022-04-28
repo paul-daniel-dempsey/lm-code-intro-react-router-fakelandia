@@ -52,7 +52,7 @@ const Misdemeaner : React.FC<mdProps> = ({citizenId,misdemeanour,date}) => {
             <li className="misdemeaner-item">{citizenId}</li>
             <li className="misdemeaner-item">{date}</li>
             <li className="misdemeaner-item">{mdDescription(misdemeanour)}</li>
-            <li className="misdemeaner-item"><img src={picsumurl(misdemeanour)} width='50' height='50'></img></li>
+            <li className="misdemeaner-item"><img src={picsumurl(misdemeanour)} alt="misdemeaner" width='50' height='50'></img></li>
            </ul>
        </article>   
    )

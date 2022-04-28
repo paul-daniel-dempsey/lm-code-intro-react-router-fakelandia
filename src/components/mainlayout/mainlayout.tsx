@@ -16,7 +16,7 @@ export const UpdateMDsContext = React.createContext<null | React.Dispatch<React.
 const MainLayout : React.FC = () => {
     
     const [MDs, setMDs] = useState<Array<mdProps>>([]);
-    const [countMD, setCountMD] = useState<number>(10);
+    const [countMD] = useState<number>(10);
 
     // load number of misdemeaners  
     useEffect(() => {
